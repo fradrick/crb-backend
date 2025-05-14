@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: crb-backend
+  datasource:
+    url: jdbc:postgresql://localhost:5432/crb
+    username: crb
+    password: Pass@word1
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      idle-timeout: 3000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+      validation-timeout: 5000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/rbz.co.zw
+
+  mail:
+    host: 10.100.240.207
+    port: 25
+    username:
+    password:
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+  servlet:
+    multipart:
+      enabled: true
+      location: uploads/
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  address: 0.0.0.0
+  port: 8081
+  servlet:
+    session:
+      timeout: 15m
+  tomcat:
+    connection-timeout: 5s
+    keep-alive-timeout: 10s
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    zw.co.rbz.crb_backend.auth: DEBUG
