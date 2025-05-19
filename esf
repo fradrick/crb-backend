@@ -1,0 +1,12 @@
+INSERT INTO registered(empno, username, reg, telExt, bankAcc, bankName, office, currency, newGrade)
+VALUES(60640, 'murapac', 1, '13701', '8080390899089', 'FBC Bank', 'HRE', 'USD', 'B2');
+
+INSERT INTO applicants(empno, surname, name, idnational, department, email, dateJoinedBank)
+VALUES(60640, 'Murapa', 'Chido', '42156438P42', 'HR_CANTEEN', 'cmurapa@rbz.co.zw', '2025-03-01');
+
+INSERT INTO applicantaccounts(empno, bankAcc, bankName, currency)
+VALUES(60640, 'RBZ0001CASH', 'RBZ', 'USD'),
+(60640, '8080390899089', 'FBC Bank', 'USD');
+
+Sch@123#@!
+10.100.245.70
